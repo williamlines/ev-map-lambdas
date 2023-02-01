@@ -10,4 +10,8 @@ provider:
 
 functions:
   hello:
-    handler: handler.hello
+    handler: ./lambdas/handler.hello
+    events:
+      - http:
+          path: /hello
+          method: get
