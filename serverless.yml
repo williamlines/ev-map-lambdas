@@ -1,0 +1,13 @@
+service: EV-Map-Lambdas
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: prod
+  region: eu-west-2
+
+functions:
+  hello:
+    handler: handler.hello
