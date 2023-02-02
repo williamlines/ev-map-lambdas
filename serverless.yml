@@ -7,6 +7,8 @@ provider:
   runtime: nodejs14.x
   stage: prod
   region: eu-west-2
+  environment:
+    MAPBOX_API_TOKEN: ${env:MAPBOX_API_TOKEN}
 
 functions:
   hello:
