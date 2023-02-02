@@ -17,3 +17,9 @@ functions:
       - http:
           path: /hello
           method: get
+  directions:
+    handler: ./lambdas/directions.directions
+    events:
+      - http:
+          path: /directions
+          method: get
