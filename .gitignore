@@ -6,3 +6,6 @@ jspm_packages
 .serverless
 lambdas/scratch.js
 lambdas/node_modules
+
+#jest
+coverage
