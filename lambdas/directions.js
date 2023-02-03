@@ -3,9 +3,10 @@
 const MAPBOX_API_TOKEN = process.env.MAPBOX_API_TOKEN;
 
 module.exports.directions = async (event) => {
-  await getDirections();
-
+  const res = await getDirections();
+  const data = await res.json();
   const response = {
+    message: data,
     statusCode: 200,
     body: "OK",
   };
@@ -13,7 +14,8 @@ module.exports.directions = async (event) => {
 };
 
 async function getDirections() {
-  const url = `https://api.mapbox.com/directions/v5/mapbox/driving/13.43,52.51;13.42,52.5;13.41,52.5?radiuses=40;;100&geometries=polyline6&access_token=${MAPBOX_API_TOKEN}`;
+  const url = `https://api.mapbox.com/directions/v5/mapbox/cycling/-84.518641,39.134270;-84.512023,39.102779?geometries=geojson&access_token=${MAPBOX_API_TOKEN}`;
 
-  await fetch(url);
+  const res = await fetch(url);
+  return res;
 }
