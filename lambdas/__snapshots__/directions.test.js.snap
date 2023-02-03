@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`direcions should not throw 1`] = `
+{
+  "body": "OK",
+  "statusCode": 200,
+}
+`;

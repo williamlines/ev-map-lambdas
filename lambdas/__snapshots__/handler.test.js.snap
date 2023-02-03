@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handler should not throw 1`] = `
+{
+  "body": "{
+  "message": "Go Serverless v3.0! Your function executed successfully!"
+}",
+  "statusCode": 200,
+}
+`;

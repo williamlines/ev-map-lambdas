@@ -5,3 +5,4 @@ jspm_packages
 # Serverless directories
 .serverless
 lambdas/scratch.js
+lambdas/node_modules
