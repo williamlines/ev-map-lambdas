@@ -7,7 +7,13 @@ fetchmock.enableMocks();
 describe("direcions", () => {
   it("should not throw", async () => {
     fetch.mockResponseOnce(JSON.stringify(mock));
-    const ret = await directions();
+    const event = {
+      queryStringParameters: {
+        origin: "origin",
+        destination: "destination",
+      },
+    };
+    const ret = await directions(event);
     expect(ret).toMatchSnapshot();
   });
 });
