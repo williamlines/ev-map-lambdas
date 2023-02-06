@@ -15,7 +15,6 @@ module.exports.directions = async (event) => {
     body: JSON.stringify({
       message: data,
       input: event,
-      queryStringParameters: event.queryStringParameters,
     }),
   };
   return response;
