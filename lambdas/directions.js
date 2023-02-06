@@ -3,12 +3,15 @@
 const MAPBOX_API_TOKEN = process.env.MAPBOX_API_TOKEN;
 
 module.exports.directions = async (event) => {
+  console.log(event);
   const res = await getDirections();
   const data = await res.json();
   const response = {
-    message: data,
     statusCode: 200,
-    body: "OK",
+    body: {
+      message: data,
+      input: event,
+    },
   };
   return response;
 };
