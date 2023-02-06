@@ -8,10 +8,11 @@ module.exports.directions = async (event) => {
   const data = await res.json();
   const response = {
     statusCode: 200,
-    body: {
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
       message: data,
       input: event,
-    },
+    }),
   };
   return response;
 };
