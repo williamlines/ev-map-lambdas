@@ -4,6 +4,12 @@ frameworkVersion: "3"
 
 provider:
   name: aws
+  httpApi:
+    authorizers:
+      customAuthorizer:
+        type: request
+        functionName: authorizer
+        enableSimpleResponses: true
   runtime: nodejs18.x
   stage: prod
   region: eu-west-2
@@ -11,15 +17,21 @@ provider:
     MAPBOX_API_TOKEN: ${env:MAPBOX_API_TOKEN}
 
 functions:
+  authorizer:
+    handler: ./lambdas/authorizer.handler
   hello:
     handler: ./lambdas/handler.hello
     events:
-      - http:
+      - httpApi:
           path: /hello
           method: get
+          authorizer:
+            name: customAuthorizer
   directions:
     handler: ./lambdas/directions.directions
     events:
-      - http:
+      - httpApi:
           path: /directions
           method: get
+          authorizer:
+            name: customAuthorizer
