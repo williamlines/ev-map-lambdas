@@ -27,7 +27,7 @@ module.exports.directions = async (event) => {
 // `https://api.mapbox.com/directions/v5/mapbox/cycling/-84.518641,39.134270;-84.512023,39.102779?geometries=geojson&access_token=${MAPBOX_API_TOKEN}`
 
 async function getDirections(origin, destination) {
-  const url = `https://api.mapbox.com/directions/v5/mapbox/cycling/${origin};${destination}?geometries=geojson&access_token=${MAPBOX_API_TOKEN}`;
+  const url = `https://api.mapbox.com/directions/v5/mapbox/cycling/${origin};${destination}?geometries=geojson&overview=full&access_token=${MAPBOX_API_TOKEN}`;
   let res;
   try {
     res = await fetch(url);
